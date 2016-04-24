@@ -29,6 +29,10 @@ public class UsersService {
 		return false;
 	}
 	
+	public User get(int i) {
+		return _users.get(i);
+	}
+	
 	public int getSize() {
 		return _users.size();
 	}

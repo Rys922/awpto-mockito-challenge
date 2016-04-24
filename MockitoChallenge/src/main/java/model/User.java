@@ -26,8 +26,16 @@ public class User {
 		return _name;
 	}
 	
+	public String getPassword() {
+		return _password;
+	}
+	
+	public String getSalt() {
+		return _salt;
+	}
+	
 	public String getHashedPassword() throws NoSuchAlgorithmException {
-		return _hashing.getHash(_salt + _password);
+		return _hashing.getHash(getSalt() + getPassword());
 	}
 	
 	public boolean comparePassword(String hashedPasswordToCompare) throws NoSuchAlgorithmException {
